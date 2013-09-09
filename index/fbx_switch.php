@@ -12,5 +12,8 @@ switch($Fusebox['fuseaction']) {
 		include('dsp_index.php');
 		break;
 
+	default:
+		header('location: /error.404');
+		break;
 }
 ?>

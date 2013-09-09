@@ -18,8 +18,7 @@ switch($Fusebox['fuseaction']) {
 		break;
 
 	default:
-		$Fusebox['circuit'] = 'error';
-		include('../error/dsp_404.php');
+		header('location: /error.404');
 		break;
 }
 ?>
