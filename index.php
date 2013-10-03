@@ -38,10 +38,10 @@ foreach($Fusebox['circuits'] as $aCircuitName => $aCircuitDefinition) {
 include('fbx_settings.php');
 
 $FB_['rawFA'] = $attributes['fuseaction'];
-if(ListLen($FB_['rawFA'], '.') == 1 && substr($FB_['rawFA'], -1) == '.') {
-	$Fusebox['fuseaction'] = 'Fusebox.defaultFuseaction';
-} else {
+if(ListLen($FB_['rawFA'], '.') == 2) {
 	$Fusebox['fuseaction'] = ListGetAt($FB_['rawFA'], 2, '.');
+} else {
+	$Fusebox['fuseaction'] = 'Fusebox.defaultFuseaction';
 }
 $Fusebox['circuit'] = ListGetAt($FB_['rawFA'], 1, '.');
 $Fusebox['targetCircuit'] = $Fusebox['circuit'];
